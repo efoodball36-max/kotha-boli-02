@@ -1,3 +1,6 @@
+import dotenv from 'dotenv';
+dotenv.config();
+
 import http from 'http';
 import { createApp } from './app.js';
 import { connectDB } from './config/db.js';
@@ -6,11 +9,13 @@ import { initCloudinary } from './config/cloudinary.js';
 
 async function start() {
   try {
-    await connectDB();
-    initCloudinary();
+    await connectDB(); // MongoDB connect
+    initCloudinary();  // Cloudinary config from .env
 
-    const app = createApp();
+    const app = createApp(); // Express app with middlewares & routes
     const server = http.createServer(app);
+
+    // Sockets (optional): use CLIENT_ORIGIN for CORS in socket init
     initSockets(server, process.env.CLIENT_ORIGIN);
 
     const port = process.env.PORT || 8080;
