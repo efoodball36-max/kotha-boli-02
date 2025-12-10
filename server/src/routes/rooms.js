@@ -26,8 +26,3 @@ router.post('/dm', authRequired, async (req, res) => {
   res.json(room);
 });
 
-<<<<<<< HEAD
-export default router;
-=======
-export default router;
->>>>>>> 3aaa7999a940efd5c5b86ed820ed4c00b034c7a4
