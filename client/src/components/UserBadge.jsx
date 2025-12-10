@@ -18,8 +18,4 @@ export default function UserBadge({ username, avatarUrl, online }) {
       <span style={{ fontWeight: 600 }}>{username}</span>
     </div>
   );
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> 3aaa7999a940efd5c5b86ed820ed4c00b034c7a4
